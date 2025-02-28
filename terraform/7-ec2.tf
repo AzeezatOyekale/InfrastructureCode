@@ -1,10 +1,10 @@
 
 resource "aws_instance" "ec2-worker1" {
-    ami = "ami-091f18e98bc129c4e"
-    instance_type = "t2.medium"
+    ami = "ami-0015d87ce0db8b343"
+    instance_type = "t2.micro"
     subnet_id = aws_subnet.public_subnet.id
     vpc_security_group_ids = [ aws_security_group.sg_custom.id ]
-    key_name = "miseuwest2ipalacaprover"
+    key_name = "Web01-key"
 
     user_data = <<-EOF
         #!/bin/bash
@@ -12,10 +12,10 @@ resource "aws_instance" "ec2-worker1" {
         sudo apt install -y ansible git
 
         # Clone the Ansible playbook from GitHub
-        git clone https://github.com/Incrisz/Terraform-ansible-iac-HNG.git /home/ubuntu/Terraform-ansible-iac-HNG
+        git clone https://github.com/AzeezatOyekale/InfrastructureCode.git /home/ubuntu/InfrastructureCode
 
         # Run the Ansible playbook
-        cd /home/ubuntu/Terraform-ansible-iac-HNG/ansible
+        cd /home/ubuntu/InfrastructureCode/ansible
         ansible-playbook playbook.yml
     EOF
 
