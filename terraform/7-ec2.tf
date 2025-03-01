@@ -1,6 +1,6 @@
 
 resource "aws_instance" "ec2-worker1" {
-    ami = "ami-0015d87ce0db8b343"
+    ami = "ami-04b4f1a9cf54c11d0"
     instance_type = "t2.micro"
     subnet_id = aws_subnet.public_subnet.id
     vpc_security_group_ids = [ aws_security_group.sg_custom.id ]
