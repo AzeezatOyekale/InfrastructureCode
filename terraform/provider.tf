@@ -1,5 +1,9 @@
-provider "aws" {
-    region = "eu-west-2"
-    access_key = var.aws-access_key
-    secret_key = var.aws-secret_key
+variable "aws_access_key" {
+  description = "AKIA6ODVALRUEBJHQYUH"
+  type        = string
+}
+
+variable "aws_secret_key" {
+  description = "YYhTAtC2/oa0TmmM7WH/ADY5MwNGg1U5jvpcr1Y1"
+  type        = string
 }
