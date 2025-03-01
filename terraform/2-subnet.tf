@@ -7,13 +7,13 @@ resource "aws_subnet" "public_subnet" {
   cidr_block = "10.0.2.0/24"
 
   # Specify the Availability Zone in which the subnet will reside.
-  availability_zone = "eu-west-2a"
+  availability_zone = "us-east-1a"
 
   # Automatically assign public IP addresses to instances launched in this subnet.
   map_public_ip_on_launch = true
 
   # Apply tags to the subnet resource for identification and organization.
   tags = {
-    "Name" = "10.0.2.0 - eu-west-2a"
+    "Name" = "10.0.2.0 - us-east-1a"
   }
 }
